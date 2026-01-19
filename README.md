@@ -14,7 +14,7 @@ Text Response plugin for GUI Chat applications. Provides markdown rendering with
 ## Installation
 
 ```bash
-npm install @gui-chat-plugin/text-response
+yarn add @gui-chat-plugin/text-response
 ```
 
 ## Usage
@@ -22,11 +22,16 @@ npm install @gui-chat-plugin/text-response
 ### Vue Integration
 
 ```typescript
-import { plugin } from "@gui-chat-plugin/text-response/vue";
-import "@gui-chat-plugin/text-response/style.css";
+// In src/tools/index.ts
+import TextResponsePlugin from "@gui-chat-plugin/text-response/vue";
 
-// Register the plugin with your GUI Chat application
-registerPlugin(plugin);
+const pluginList = [
+  // ... other plugins
+  TextResponsePlugin,
+];
+
+// In src/main.ts
+import "@gui-chat-plugin/text-response/style.css";
 ```
 
 ### Core-only Usage
