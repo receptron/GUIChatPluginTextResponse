@@ -1,5 +1,7 @@
 # @gui-chat-plugin/text-response
 
+[![npm version](https://badge.fury.io/js/%40gui-chat-plugin%2Ftext-response.svg)](https://www.npmjs.com/package/@gui-chat-plugin/text-response)
+
 Text Response plugin for GUI Chat applications. Provides markdown rendering with role-based styling for displaying text content from assistants, users, and systems.
 
 ## Features
@@ -81,6 +83,14 @@ yarn build
 # Lint
 yarn lint
 ```
+
+## Test Prompts
+
+Try these prompts to test the plugin:
+
+1. "Explain the difference between let and const in JavaScript"
+2. "Write a short poem about programming"
+3. "List the top 5 programming languages for web development"
 
 ## License
 
