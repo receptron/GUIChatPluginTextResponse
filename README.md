@@ -65,16 +65,16 @@ interface TextResponseData {
 
 ```bash
 # Install dependencies
-npm install
+yarn install
 
 # Run demo
-npm run dev
+yarn dev
 
 # Build
-npm run build
+yarn build
 
 # Lint
-npm run lint
+yarn lint
 ```
 
 ## License
