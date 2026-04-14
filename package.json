@@ -1,6 +1,6 @@
 {
   "name": "@gui-chat-plugin/text-response",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Text Response plugin for GUI Chat - Markdown rendering with role-based styling",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -37,7 +37,7 @@
     "vue": "^3.5.0"
   },
   "dependencies": {
-    "gui-chat-protocol": "^0.0.4",
+    "gui-chat-protocol": "^0.1.0",
     "marked": "^17.0.1"
   },
   "devDependencies": {
