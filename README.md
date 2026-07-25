@@ -16,8 +16,11 @@ Text Response plugin for GUI Chat applications. Provides markdown rendering with
 ## Installation
 
 ```bash
-yarn add @gui-chat-plugin/text-response
+yarn add @gui-chat-plugin/text-response gui-chat-protocol
 ```
+
+> `gui-chat-protocol` is a peer dependency — install it alongside the plugin; the host application provides the runtime and this plugin only declares the compatible range.
+
 
 ## Usage
 
