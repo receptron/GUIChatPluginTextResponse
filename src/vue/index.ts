@@ -20,13 +20,7 @@ export const plugin: ToolPlugin<TextResponseData, unknown, TextResponseArgs> = {
 
 export type { TextResponseData, TextResponseArgs } from "../core/types";
 
-export {
-  TOOL_NAME,
-  TOOL_DEFINITION,
-  SYSTEM_PROMPT,
-  executeTextResponse,
-  pluginCore,
-} from "../core/plugin";
+export { TOOL_NAME, TOOL_DEFINITION, SYSTEM_PROMPT, executeTextResponse, pluginCore } from "../core/plugin";
 
 export { samples } from "../core/samples";
 

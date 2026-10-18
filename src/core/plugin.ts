@@ -8,10 +8,7 @@ import { TOOL_DEFINITION, SYSTEM_PROMPT } from "./definition";
 
 export { TOOL_NAME, TOOL_DEFINITION, SYSTEM_PROMPT } from "./definition";
 
-export const executeTextResponse = async (
-  _context: ToolContext,
-  args: TextResponseArgs,
-): Promise<ToolResult<TextResponseData, unknown>> => {
+export const executeTextResponse = async (_context: ToolContext, args: TextResponseArgs): Promise<ToolResult<TextResponseData, unknown>> => {
   return {
     data: {
       text: args.text,
@@ -22,11 +19,7 @@ export const executeTextResponse = async (
   };
 };
 
-export const pluginCore: ToolPluginCore<
-  TextResponseData,
-  unknown,
-  TextResponseArgs
-> = {
+export const pluginCore: ToolPluginCore<TextResponseData, unknown, TextResponseArgs> = {
   toolDefinition: TOOL_DEFINITION,
   execute: executeTextResponse,
   generatingMessage: "Processing...",

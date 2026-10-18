@@ -3,22 +3,12 @@
     <div class="text-response-content-wrapper">
       <div class="p-6">
         <div class="max-w-3xl mx-auto space-y-4">
-          <div
-            class="rounded-lg border border-gray-300 bg-white shadow-sm p-5"
-            :class="roleTheme"
-          >
-            <div
-              class="flex justify-between items-start mb-2 text-sm text-gray-500"
-            >
+          <div class="rounded-lg border border-gray-300 bg-white shadow-sm p-5" :class="roleTheme">
+            <div class="flex justify-between items-start mb-2 text-sm text-gray-500">
               <span class="font-medium text-gray-700">{{ speakerLabel }}</span>
-              <span v-if="transportKind" class="italic">{{
-                transportKind
-              }}</span>
+              <span v-if="transportKind" class="italic">{{ transportKind }}</span>
             </div>
-            <div
-              class="markdown-content prose prose-slate max-w-none leading-relaxed text-gray-900"
-              v-html="renderedHtml"
-            ></div>
+            <div class="markdown-content prose prose-slate max-w-none leading-relaxed text-gray-900" v-html="renderedHtml"></div>
           </div>
         </div>
       </div>
@@ -27,15 +17,8 @@
     <!-- Collapsible Editor -->
     <details class="text-response-source">
       <summary>Edit Text Content</summary>
-      <textarea
-        v-model="editedText"
-        @input="handleTextEdit"
-        class="text-response-editor"
-        spellcheck="false"
-      ></textarea>
-      <button @click="applyChanges" class="apply-btn" :disabled="!hasChanges">
-        Apply Changes
-      </button>
+      <textarea v-model="editedText" @input="handleTextEdit" class="text-response-editor" spellcheck="false"></textarea>
+      <button @click="applyChanges" class="apply-btn" :disabled="!hasChanges">Apply Changes</button>
     </details>
   </div>
 </template>
@@ -66,12 +49,8 @@ watch(
     }
   },
 );
-const messageRole = computed(
-  () => props.selectedResult.data?.role ?? "assistant",
-);
-const transportKind = computed(
-  () => props.selectedResult.data?.transportKind ?? "",
-);
+const messageRole = computed(() => props.selectedResult.data?.role ?? "assistant");
+const transportKind = computed(() => props.selectedResult.data?.transportKind ?? "");
 
 const renderedHtml = computed(() => {
   if (!messageText.value) return "";
@@ -80,10 +59,7 @@ const renderedHtml = computed(() => {
 
   // Detect and wrap JSON content in code fences
   const trimmedText = processedText.trim();
-  if (
-    (trimmedText.startsWith("{") && trimmedText.endsWith("}")) ||
-    (trimmedText.startsWith("[") && trimmedText.endsWith("]"))
-  ) {
+  if ((trimmedText.startsWith("{") && trimmedText.endsWith("}")) || (trimmedText.startsWith("[") && trimmedText.endsWith("]"))) {
     try {
       // Validate it's actually JSON
       JSON.parse(trimmedText);
@@ -95,14 +71,11 @@ const renderedHtml = computed(() => {
   }
 
   // Process <think> blocks to make them grey
-  processedText = processedText.replace(
-    /<think>([\s\S]*?)<\/think>/g,
-    (_, content) => {
-      // Render the think block content as markdown and wrap in a styled div
-      const thinkContent = marked(content.trim());
-      return `<div class="think-block">${thinkContent}</div>`;
-    },
-  );
+  processedText = processedText.replace(/<think>([\s\S]*?)<\/think>/g, (_, content) => {
+    // Render the think block content as markdown and wrap in a styled div
+    const thinkContent = marked(content.trim());
+    return `<div class="think-block">${thinkContent}</div>`;
+  });
 
   // Configure marked to handle line breaks
   const markedOptions = {
