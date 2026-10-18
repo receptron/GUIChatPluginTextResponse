@@ -1,6 +1,7 @@
 # @gui-chat-plugin/text-response
 
 [![npm version](https://badge.fury.io/js/%40gui-chat-plugin%2Ftext-response.svg)](https://www.npmjs.com/package/@gui-chat-plugin/text-response)
+[![scoria](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/receptron/GUIChatPluginTextResponse/badges/scoria.json)](https://github.com/receptron/GUIChatPluginTextResponse/actions/workflows/scoria.yml)
 
 Text Response plugin for GUI Chat applications. Provides markdown rendering with role-based styling for displaying text content from assistants, users, and systems.
 
